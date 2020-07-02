@@ -1,3 +1,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
   package="com.example.background">
+    <application>
+        <service
+            android:name="com.example.background.CustomAutofillService"
+            android:label="Background Autofill Service"
+            android:permission="android.permission.BIND_AUTOFILL_SERVICE">
+            <intent-filter>
+                <action android:name="android.service.autofill.AutofillService" />
+            </intent-filter>
+        </service>
+    </application>
 </manifest>

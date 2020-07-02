@@ -41,7 +41,8 @@ class CustomAutofillService : AutofillService() {
         val password = sharedPref.getString("flutter.DUMMY_PASSWORD", "fallback")
 
         Log.w("CUSTOM_AUTOFILL_SERVICE", "onFillRequest")
-        BackgroundPlugin.sendBackgroundMessageToExecute(this)
+        BackgroundListener.onInitialized(this)
+        BackgroundListener.sendBackgroundMessageToExecute(this, "hello there!@#!@#!@", null)
 
         // Build the presentation of the datasets
         val usernamePresentation = RemoteViews(packageName, android.R.layout.simple_list_item_1)
